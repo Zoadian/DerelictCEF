@@ -144,7 +144,7 @@ class DerelictCEFLoader : SharedLibLoader {
             bindFunc( cast( void** )&cef_post_task, "cef_post_task" );
             bindFunc( cast( void** )&cef_post_delayed_task, "cef_post_delayed_task" );
             bindFunc( cast( void** )&cef_begin_tracing, "cef_begin_tracing" );
-            bindFunc( cast( void** )&cef_end_tracing_async, "cef_end_tracing_async" );
+            //bindFunc( cast( void** )&cef_end_tracing_async, "cef_end_tracing_async" );
             bindFunc( cast( void** )&cef_now_from_system_trace_time, "cef_now_from_system_trace_time" );
             bindFunc( cast( void** )&cef_parse_url, "cef_parse_url" );
             bindFunc( cast( void** )&cef_create_url, "cef_create_url" );
@@ -170,15 +170,16 @@ class DerelictCEFLoader : SharedLibLoader {
             bindFunc( cast( void** )&cef_list_value_create, "cef_list_value_create" );
             bindFunc( cast( void** )&cef_visit_web_plugin_info, "cef_visit_web_plugin_info" );
             bindFunc( cast( void** )&cef_refresh_web_plugins, "cef_refresh_web_plugins" );
-            bindFunc( cast( void** )&cef_add_web_plugin_path, "cef_add_web_plugin_path" );
-            bindFunc( cast( void** )&cef_add_web_plugin_directory, "cef_add_web_plugin_directory" );
-            bindFunc( cast( void** )&cef_remove_web_plugin_path, "cef_remove_web_plugin_path" );
+            // bindFunc( cast( void** )&cef_add_web_plugin_path, "cef_add_web_plugin_path" );
+            // bindFunc( cast( void** )&cef_add_web_plugin_directory, "cef_add_web_plugin_directory" );
+            // bindFunc( cast( void** )&cef_remove_web_plugin_path, "cef_remove_web_plugin_path" );
             bindFunc( cast( void** )&cef_unregister_internal_web_plugin, "cef_unregister_internal_web_plugin" );
-            bindFunc( cast( void** )&cef_force_web_plugin_shutdown, "cef_force_web_plugin_shutdown" );
+            // bindFunc( cast( void** )&cef_force_web_plugin_shutdown, "cef_force_web_plugin_shutdown" );
             bindFunc( cast( void** )&cef_register_web_plugin_crash, "cef_register_web_plugin_crash" );
             bindFunc( cast( void** )&cef_is_web_plugin_unstable, "cef_is_web_plugin_unstable" );
             bindFunc( cast( void** )&cef_xml_reader_create, "cef_xml_reader_create" );
             bindFunc( cast( void** )&cef_zip_reader_create, "cef_zip_reader_create" );
+            bindFunc( cast( void** )&cef_quit_message_loop, "cef_quit_message_loop" );
       }
 }
 

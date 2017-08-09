@@ -89,6 +89,8 @@ extern( C ) @nogc nothrow {
     alias da_cef_string_userfree_utf8_free = void function( cef_string_userfree_utf8_t );
     alias da_cef_string_userfree_utf16_free = void function( cef_string_userfree_utf16_t );
 
+	alias da_cef_quit_message_loop = void function();
+
     int cef_string_wide_copy(wchar_t* src, size_t srclen, cef_string_wide_t* output ) {
         return cef_string_wide_set( src, srclen, output, 1 );
     }
@@ -219,7 +221,7 @@ extern( C ) @nogc nothrow {
 
     // cef_trace_capi.h
     alias da_cef_begin_tracing = int function( const( cef_string_t )* );
-    alias da_cef_end_tracing_async = int function( const( cef_string_t )*,cef_end_tracing_callback_t* );
+    // alias da_cef_end_tracing_async = int function( const( cef_string_t )*,cef_end_tracing_callback_t* );
     alias da_cef_now_from_system_trace_time = int64 function();
 
     // cef_url_capi.h
@@ -362,7 +364,7 @@ __gshared {
     da_cef_post_task cef_post_task;
     da_cef_post_delayed_task cef_post_delayed_task;
     da_cef_begin_tracing cef_begin_tracing;
-    da_cef_end_tracing_async cef_end_tracing_async;
+    //da_cef_end_tracing_async cef_end_tracing_async;
     da_cef_now_from_system_trace_time cef_now_from_system_trace_time;
     da_cef_parse_url cef_parse_url;
     da_cef_create_url cef_create_url;
@@ -397,4 +399,6 @@ __gshared {
     da_cef_is_web_plugin_unstable cef_is_web_plugin_unstable;
     da_cef_xml_reader_create cef_xml_reader_create;
     da_cef_zip_reader_create cef_zip_reader_create;
+
+	da_cef_quit_message_loop cef_quit_message_loop;
 }
